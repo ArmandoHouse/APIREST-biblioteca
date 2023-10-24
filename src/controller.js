@@ -7,8 +7,8 @@ class LibroController {
     }
 
     async getOne(req, res) {
-        const id = 2;
-        const [result] = await pool.query(`SELECT * FROM Libros WHERE id = ${id}`);
+        const libro = req.body;
+        const [result] = await pool.query(`SELECT * FROM Libros WHERE id = ${libro.id}`);
         res.json(result);
     }
 
